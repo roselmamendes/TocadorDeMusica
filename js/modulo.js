@@ -1,37 +1,28 @@
-/**
-* Created with TocadorDeMusica.
-* User: roselmamendes
-* Date: 2014-05-11
-* Time: 08:14 PM
-* To change this template use Tools | Templates.
-*/
-
-$(document).ready(function(){
+function init(){                
     
-    init();    
-    
-});
-
-function init(){
-    
-     if (!createjs.Sound.initializeDefaultPlugins()) {
-         return;
-     }
+//    console.log("Deu erro no plugin");
+    if (!createjs.Sound.initializeDefaultPlugins()) {
+        
+        //document.getElementById("centro").innerHTML = "Deu erro no plugin";
+        console.log("Deu erro no plugin");
+        return;
+    }
 
     var audioPath = "assets/";
     var manifest = [
-        {id:"Music",src:"18-machinae_supremacy-lord_krutors_dominion.ogg"},
-        {id:"Thunder",src:"Thunder1.ogg"}
+    {id:"Music",src:"nada.mp3"}
     ];
-    createjs.Sound.alternateExtensions = ["mp3"];
     
-    createjs.Sound.addEventListener("loadComplete",handleLoad);
+    createjs.Sound.alternateExtensions = ["mp3"];
+
+    createjs.Sound.addEventListener("fileload",handleLoad);
     createjs.Sound.registerManifest(manifest,audioPath);
     
 }
 
 function handleLoad(event){
-    
+
     createjs.Sound.play(event.src);
-    
+
+
 }
