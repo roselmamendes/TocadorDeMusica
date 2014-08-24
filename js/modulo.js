@@ -1,28 +1,43 @@
+var tocando;
+
 function init(){                
     
-//    console.log("Deu erro no plugin");
-    if (!createjs.Sound.initializeDefaultPlugins()) {
-        
-        //document.getElementById("centro").innerHTML = "Deu erro no plugin";
-        console.log("Deu erro no plugin");
-        return;
+    if(tocando != undefined && tocando.playState == createjs.Sound.PLAY_FINISHED){
+
+
+        tocando.play();
+
     }
+    else{
 
-    var audioPath = "assets/";
-    var manifest = [
-    {id:"Music",src:"nada.mp3"}
-    ];
-    
-    createjs.Sound.alternateExtensions = ["mp3"];
+        //console.log("Deu erro no plugin");
+        if (!createjs.Sound.initializeDefaultPlugins()) {
+            
+            //document.getElementById("centro").innerHTML = "Deu erro no plugin";
+            console.log("Deu erro no plugin");
+            return;
+        }
 
-    createjs.Sound.addEventListener("fileload",handleLoad);
-    createjs.Sound.registerManifest(manifest,audioPath);
+        var audioPath = "assets/";
+        var manifest = [
+        {id:"Music",src:"FrevoRasgado.mp3"}
+        ];
+        
+        createjs.Sound.alternateExtensions = ["mp3"];
+
+        createjs.Sound.addEventListener("fileload",handleLoad);
+        createjs.Sound.registerManifest(manifest,audioPath);
+
+    }
     
+}
+
+function parar(){
+    tocando.stop();
 }
 
 function handleLoad(event){
 
-    createjs.Sound.play(event.src);
-
+    tocando = createjs.Sound.play(event.src);
 
 }
