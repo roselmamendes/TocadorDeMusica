@@ -19,4 +19,8 @@ Player.prototype.play = function(){
 		return;
 };
 
+Player.prototype.whatIsPlaying = function(){
+	return "Frevo Rasgado";
+}
+
 module.exports = Player;

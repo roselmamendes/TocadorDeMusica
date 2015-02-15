@@ -1,5 +1,5 @@
 describe("For play a song", function(){
-	//var createjs = require("./soundjs");
+
 	var Player = require("../js/Player");
 	var player = null;
 	var songsToAdd = ["FrevoRasgado.mp3", "nada.mp3"]
@@ -18,11 +18,18 @@ describe("For play a song", function(){
 		player.init(songsToAdd);
 		player.addSong("02.ogg");
 		expect(player.getSongQueue()).toEqual(expectedsongs);
+	})
+
+	it("should call play method", function(){
+		spyOn(player,"play");
+		player.play();
+		expect(player.play).toHaveBeenCalled();
 	});
 
-	/*it("should call createjs.Sound.play method", function(){
-		spyOn(createjs.Sound,"play");
+	it("should show which music is playing", function(){
+		player.init(songsToAdd);
+		spyOn(player,"play");
 		player.play();
-		expect(player.play).toHaveBeenCalledWith(songsToAdd);
-	});*/
+		expect(player.whatIsPlaying()).toBe("Frevo Rasgado");
+	});
 });
