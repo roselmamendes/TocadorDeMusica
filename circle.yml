@@ -1,0 +1,3 @@
+machine:
+  node:
+    version: 1.4.28
