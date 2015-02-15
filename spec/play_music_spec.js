@@ -1,6 +1,6 @@
 describe("For play a song", function(){
 
-	var Player = require("../js/Player");
+	var Player = require("js/Player");
 	var player = null;
 	var songsToAdd = ["FrevoRasgado.mp3", "nada.mp3"]
 
