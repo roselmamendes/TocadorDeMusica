@@ -2,7 +2,7 @@ var path = require('path');
 
 describe("For play a song", function(){
 
-	var Player = require(path.normalize("../js/Player"));
+	var Player = require(path.resolve("js","Player"));
 	var player = null;
 	var songsToAdd = ["FrevoRasgado.mp3", "nada.mp3"]
 
