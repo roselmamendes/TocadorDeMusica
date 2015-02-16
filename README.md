@@ -8,7 +8,7 @@ Snap CI
 [![Build Status](https://snap-ci.com/roselmamendes/TocadorDeMusica/branch/master/build_image)](https://snap-ci.com/roselmamendes/TocadorDeMusica/branch/master)
 
 # TocadorDeMusica
-Simples player de musica.
+Simple music player.
 
 ## Requirements
 
