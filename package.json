@@ -3,16 +3,18 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-        "angular": "1.4.3"
+    "angular": "1.4.3",
+    "codecov.io": "^0.1.6",
+    "istanbul": "^0.3.22"
   },
-  "devDependencies":{
-        "angular-mocks": "1.4.3",
-        "jasmine": "2.3.1",
-        "karma": "0.13.3 ",
-        "karma-jasmine": "0.3.6",
-        "karma-phantomjs-launcher": "0.2.0"
+  "devDependencies": {
+    "angular-mocks": "1.4.3",
+    "jasmine": "2.3.1",
+    "karma": "0.13.3 ",
+    "karma-jasmine": "0.3.6",
+    "karma-phantomjs-launcher": "0.2.0"
   },
-  "scripts":{
-        "test": "karma start --single-run"
+  "scripts": {
+    "test": "karma start --single-run"
   }
 }
