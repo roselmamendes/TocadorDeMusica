@@ -1,3 +1,7 @@
 machine:
   node:
     version: 0.10.28
+test:
+  post:
+    - istanbul cover jasmine-node --captureExceptions spec/ \
+  && cat ./coverage/coverage.json | ./node_modules/codecov.io/bin/codecov.io.js
