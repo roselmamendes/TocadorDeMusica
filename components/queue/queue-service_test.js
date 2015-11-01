@@ -9,19 +9,22 @@ describe('QueueService', function(){
     }));
 
     it('should add a song',function(){
-	service.addSong('assets/nada.mp3');
+	service.addSong('mp3/awesome.mp3');
+	service.addSong('noExtensionOggFile');
 
 	var actual_music_list = service.getAllSongs();
 
-	var expected_music_list = ['assets/nada.mp3'];
+	var expected_music_list = [{id: "1", src: "mp3/awesome.mp3"},
+				    {id: "2", src:"noExtensionOggFile"}];
 
-	expect(actual_music_list).toEqual(expected_music_list);
+	expect(actual_music_list[0].src).toEqual(expected_music_list[0].src);
+	expect(actual_music_list[1].src).toEqual(expected_music_list[1].src);
     });
 
     it('should play the list of songs',function(){
 	//var createJS = jasmine.createSpyObj('createJS', ['Sound']);
 	service.init = jasmine.createSpy('on');
-	service.addSong({id: "cool", src: {mp3:"mp3/awesome.mp3", ogg:"noExtensionOggFile"}});
+	service.addSong("mp3/awesome.mp3");
 
 	service.play();
 

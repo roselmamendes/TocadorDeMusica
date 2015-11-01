@@ -5,7 +5,7 @@ angular.module('Queue')
 	var sounds;
 
 	var loadHandler = function(event) {
-	    var instance = createjs.Sound.play("sound");
+	    var instance = createjs.Sound.play(event.src);
 	    instance.on("complete", this.handleComplete, this);
 	    instance.volume = 0.5;
 	}
@@ -13,11 +13,11 @@ angular.module('Queue')
 	var service = {
 	    init: function(){
 		createjs.Sound.alternateExtensions = ["mp3"];
-		createjs.Sound.on("fileload", loadHandler, this);
-		sounds = {path:"./", manifest: queue};
+		createjs.Sound.addEventListener("fileload", handleLoad);
+		createjs.Sound.registerSounds(queue,"./");
 	    },
 	    addSong: function(music){
-		queue.push(music);
+		queue.push({id: (queue.length + 1).toString(), src: music});
 	    },
 	    getAllSongs: function(){
 		return queue;
