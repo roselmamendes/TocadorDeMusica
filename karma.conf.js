@@ -19,7 +19,9 @@ module.exports = function(config) {
 	  'node_modules/angular-mocks/angular-mocks.js',
 	  'spec/soundjs-0.6.1.min.js',
 	  'components/queue/queue.js',
-      'components/queue/*.js'
+	  'components/queue/*.js',
+	  'app.js',
+	  '*.js'
     ],
 
 
