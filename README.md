@@ -10,12 +10,16 @@ Snap CI
 # TocadorDeMusica
 Simple music player.
 
-## Requirements
+## Stack
 
->>Node.js
+>>AngularJS
 
->>Jasmine-node
+>>SoundJS
 
-The project already has a <b>package.json</b> that is going install the dependencies. For that, use *npm install* in the root of the project.
+>>Jasmine
+
+>>Karma
+
+The project has a <b>package.json</b> that is going install the dependencies. For that, use *npm install* (install npm before) in the root of the project.
 
 For run tests, use *npm test*.
