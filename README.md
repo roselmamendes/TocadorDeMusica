@@ -1,6 +1,3 @@
-Circle CI
-[![Circle CI](https://circleci.com/gh/roselmamendes/TocadorDeMusica.svg?style=svg)](https://circleci.com/gh/roselmamendes/TocadorDeMusica)
-
 Travis CI
 [![Build Status](https://travis-ci.org/roselmamendes/TocadorDeMusica.svg?branch=master)](https://travis-ci.org/roselmamendes/TocadorDeMusica)
 
